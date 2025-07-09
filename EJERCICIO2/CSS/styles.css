@@ -1,0 +1,172 @@
+/* Estilos base */
+body {
+  font-family:  'Franklin Gothic Heavy', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d9f1ec;
+  background: linear-gradient(135deg, #d9f1ec, #77f76b);
+  color: black;
+  display: grid; /* Contenedor principal en Grid */
+  grid-template-rows: auto 1fr auto; /* Encabezado - contenido - pie */
+  min-height: 100vh;
+}
+
+.head {
+  background-color: #1eb4f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Galería más ancha que el formulario */
+  gap: 30px;
+  padding: 20px;
+}
+
+.galery h2, .contac h2 {
+  margin-top: 0;
+}
+
+/* Galería con Grid */
+.galery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.galery img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid #f308df;
+}
+
+/* Formulario con Flexbox */
+.contac form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #b90468;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #f308df;
+  color: white;
+  padding: 10px;
+  border: 1px solid #b90468;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(131, 131, 131);
+}
+
+.foot {
+  background-color: rgb(131, 131, 131);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 900px) {
+ 
+    .main {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+  }
+
+  .galery {
+    grid-template-columns: 1fr; /* Una imagen por fila */
+  }
+
+   .head {
+    font-size: 1.5rem;
+  }
+
+    .contac {
+        font-size: 1.5rem;
+  }
+  .foot {
+    font-size: 0.9rem;
+  }
+}
+
+/* MEDIA QUERY PARA PANTALLAS PEQUEÑAS */
+@media screen and (max-width: 600px) {
+
+  .main {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+
+  .contac {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+    .foot {
+        font-size: 0.9rem;
+    }
+    .galery {
+        width: 100%;
+        height: auto;
+    }
+    .head {
+        font-size: 1.5rem;
+    }
+}
+
+/* Efectos de hover para las imágenes */
+/* Efecto 1: Zoom suave */
+
+.efecto1 img:hover {
+  transform: scale(1.2);
+}
+/* Efecto 2: Rotación */
+.efecto2 img:hover {
+  transform: rotate(180deg);
+}
+/* Efecto 3: Escala + sombra */
+.efecto3 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(15, 249, 7, 0.975);
+}
+
+/* Efecto 4: Blanco y negro */
+.efecto4 img {
+  filter: grayscale(100%);
+}
+.efecto4 img:hover {
+  filter: grayscale(0%);
+}
+
+/* Efecto 5: Saturación extrema */
+.efecto5 img:hover {
+  filter: saturate(300%);
+}
+
+/* Efecto 6: Invertido */
+.efecto6 img:hover {
+  filter: invert(100%);
+}
+
+/* Efecto 7: Brillo + escala */
+.efecto7 img:hover {
+  filter: brightness(1.5);
+  transform: scale(1.1);
+}
+
+/* Efecto 8: Desenfoque suave */
+.efecto8 img:hover {
+  filter: blur(2px);
+  transform: scale(1.05);
+}
